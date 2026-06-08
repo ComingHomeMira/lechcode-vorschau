@@ -22,7 +22,7 @@
   <title>Lechcode · Websites mit Seele aus Landsberg am Lech</title>
   <meta name="description" content="Lechcode — moderne, schnelle Websites aus Landsberg am Lech. Für Menschen & Unternehmen, die Gutes tun: Gesundheit, Coaching, Achtsamkeit, Naturheilkunde, Nachhaltigkeit. Wir bauen deine Seite vorab — als Geschenk." />
   <meta name="theme-color" content="#16130c" />
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTQnIGZpbGw9JyMxZjFiMTInLz48cG9seWxpbmUgcG9pbnRzPScyNSwyMiAxNywzMiAyNSw0MicgZmlsbD0nbm9uZScgc3Ryb2tlPScjZTdiOTY0JyBzdHJva2Utd2lkdGg9JzYnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwb2x5bGluZSBwb2ludHM9JzM5LDIyIDQ3LDMyIDM5LDQyJyBmaWxsPSdub25lJyBzdHJva2U9JyNlN2I5NjQnIHN0cm9rZS13aWR0aD0nNicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PGxpbmUgeDE9JzM1LjUnIHkxPScxOScgeDI9JzI4LjUnIHkyPSc0NScgc3Ryb2tlPScjZTg5MjNmJyBzdHJva2Utd2lkdGg9JzYnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPjwvc3ZnPg==" />
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTUnIGZpbGw9JyMxZjFiMTInLz48Y2lyY2xlIGN4PSczMicgY3k9JzMyJyByPScyMi41JyBmaWxsPSdub25lJyBzdHJva2U9JyNlN2I5NjQnIHN0cm9rZS13aWR0aD0nMy40Jy8+PHBhdGggZD0nTTE1IDM2IEMgMjIgMjgsIDI5IDI4LCAzMyAzNCBDIDM3IDQwLCA0NCA0MCwgNTAgMzEnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2U3Yjk2NCcgc3Ryb2tlLXdpZHRoPSc0LjInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxjaXJjbGUgY3g9JzQ0JyBjeT0nMTguNScgcj0nMy40JyBmaWxsPScjZTg5MjNmJy8+PC9zdmc+" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -238,6 +238,18 @@
   .foot-bottom{margin-top:clamp(36px,5vw,52px);padding-top:24px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);}
   .foot-bottom .wm{font-size:15px;}
 
+  /* ===== Lech-Welle-Logo, Footer-Skyline & Bayertor-Motiv ===== */
+  .brand{display:inline-flex;align-items:center;gap:10px;}
+  .brand-mark{width:30px;height:30px;color:var(--gold);flex:none;}
+  .foot-logo{display:inline-flex;align-items:center;gap:10px;}
+  .foot-logo .brand-mark{width:27px;height:27px;}
+  .foot-scene{margin-top:clamp(30px,4.5vw,46px);text-align:center;}
+  .foot-scene .scene-svg{width:min(460px,94%);height:auto;color:var(--gold);margin:0 auto;display:block;}
+  .about{position:relative;overflow:hidden;}
+  .about > .wrap{position:relative;z-index:1;}
+  .about-bayertor{position:absolute;right:-6px;bottom:0;width:clamp(170px,24vw,290px);color:var(--gold);opacity:.06;pointer-events:none;z-index:0;}
+  @media (max-width:600px){.about-bayertor{opacity:.04;}}
+
   /* ===== Reveal & Responsive ===== */
   .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
   .js .reveal.in{opacity:1;transform:none;}
@@ -268,7 +280,14 @@
   <!-- NAV -->
   <header class="nav">
     <nav class="wrap nav-in" aria-label="Hauptnavigation">
-      <a class="wm" href="#top" aria-label="Lechcode Startseite"><span class="lech">lech</span><span class="code">code</span></a>
+      <a class="brand" href="#top" aria-label="Lechcode Startseite">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="24" cy="24" r="20.5"/>
+          <path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/>
+          <circle cx="33" cy="13" r="1.9" fill="#e8923f" stroke="none"/>
+        </svg>
+        <span class="wm"><span class="lech">lech</span><span class="code">code</span></span>
+      </a>
       <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
         <a href="#arbeiten">Arbeiten</a>
@@ -463,6 +482,17 @@
 
     <!-- ÜBER UNS -->
     <section class="about dark reveal" id="ueber-uns">
+      <!-- leises Bayertor-Motiv (Landsberg-Wahrzeichen) -->
+      <svg class="about-bayertor" viewBox="0 0 110 152" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 70 L30 28 L42 70"/><path d="M19 70 V152 H41 V70"/>
+        <path d="M68 70 L80 28 L92 70"/><path d="M69 70 V152 H91 V70"/>
+        <path d="M40 18 V152 H70 V18"/>
+        <path d="M40 18 V8 H45 V18 H51 V8 H59 V18 H65 V8 H70 V18"/>
+        <circle cx="55" cy="46" r="7"/>
+        <path d="M44 84 Q55 64 66 84 V120 H44 Z"/>
+        <path d="M30 120 H80 V152 H30"/>
+        <path d="M46 152 V132 a9 9 0 0 1 18 0 V152"/>
+      </svg>
       <div class="wrap">
         <div class="sec-head">
           <span class="eyebrow">Über uns</span>
@@ -548,7 +578,7 @@
     <div class="wrap">
       <div class="foot-top">
         <div class="foot-brand">
-          <span class="wm"><span class="lech">lech</span><span class="code">code</span></span>
+          <span class="foot-logo"><svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="20.5"/><path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/><circle cx="33" cy="13" r="1.9" fill="#e8923f" stroke="none"/></svg><span class="wm"><span class="lech">lech</span><span class="code">code</span></span></span>
           <p class="tag">Code mit <b>Seele</b>.</p>
           <p class="addr">Lenny, Marie &amp; Michael · Landsberg am Lech<br>hallo@lechcode.de · lechcode.de</p>
         </div>
@@ -564,6 +594,36 @@
           <a href="https://wairua-spirit.de" target="_blank" rel="noopener">Referenz: wairua-spirit.de</a>
         </div>
       </div>
+
+      <!-- Landsberg-Skyline: Bayertor · Häuserzeile · Schmalzturm · Mutterturm -->
+      <div class="foot-scene">
+        <svg class="scene-svg" viewBox="0 0 480 192" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" aria-label="Landsberg am Lech — Bayertor, Schmalzturm, Mutterturm">
+          <defs><pattern id="rfg" width="10" height="12" patternUnits="userSpaceOnUse"><path d="M5 0 L10 6 L5 12 L0 6 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-opacity=".8"/></pattern></defs>
+          <path d="M21 102 L28 73 L35 102"/><path d="M22 102 V172 H34 V102"/><path d="M28 122 V130"/>
+          <path d="M73 102 L80 73 L87 102"/><path d="M74 102 V172 H86 V102"/><path d="M80 122 V130"/>
+          <path d="M42 50 V172 H66 V50"/><path d="M42 50 V44 H46 V50 H51 V44 H57 V50 H62 V44 H66 V50"/>
+          <circle cx="54" cy="72" r="5"/><path d="M54 72 V68 M54 72 l3 1.5" stroke-width="0.9"/>
+          <path d="M45 106 Q54 92 63 106 V130 H45 Z"/><path d="M48 90 Q54 85 60 90 V96 H48 Z"/>
+          <path d="M28 148 H80 V172 H28"/><path d="M44 172 V158 a10 10 0 0 1 20 0 V172"/><path d="M50 146 h8 v-5 h-8 z"/>
+          <path d="M92 172 V116 L114 98 L136 116 V172 Z"/><path d="M102 136 h9 M119 136 h9 M102 156 h9 M119 156 h9"/>
+          <path d="M136 172 V120 L156 102 L176 120 V172 Z"/><path d="M144 140 h9 M158 140 h9 M144 158 h9 M158 158 h9"/>
+          <path d="M176 172 V122 C176 116 180 114 184 117 C187 110 203 110 206 117 C210 114 214 116 214 122 V172 Z"/><path d="M184 140 h9 M198 140 h9 M184 158 h9 M198 158 h9"/>
+          <path d="M214 84 V172 H274 V84 Z"/><path d="M214 116 H274 M214 144 H274"/>
+          <path d="M234 172 V160 a10 10 0 0 1 20 0 V172"/>
+          <circle cx="244" cy="106" r="9"/><path d="M244 106 V98 M244 106 l5 2.5" stroke-width="0.9"/>
+          <path d="M206 84 L244 16 L282 84 Z" fill="url(#rfg)" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M244 16 V3 M239 16 L244 7 L249 16 M240 8 H248"/><circle cx="244" cy="3" r="1.5"/><path d="M244 7 h6 v3 h-6"/>
+          <path d="M206 84 V75 M203 79 L206 72 L209 79 M282 84 V75 M279 79 L282 72 L285 79"/>
+          <path d="M274 172 V110 H328 V172 Z"/><path d="M272 110 L282 96 H320 L330 110"/><path d="M282 128 h8 M298 128 h8 M312 128 h8 M282 146 h8 M298 146 h8 M312 146 h8 M282 164 h8 M312 164 h8"/>
+          <path d="M328 172 V114 C328 107 333 105 337 108 C340 99 360 99 363 108 C367 105 372 107 372 114 V172 Z"/><path d="M336 130 h9 M352 130 h9 M336 150 h9 M352 150 h9"/>
+          <path d="M382 172 V100 H420 V172"/><path d="M378 100 H424 V90 H378 Z"/><path d="M386 90 h6 M398 90 h6 M410 90 h6"/>
+          <path d="M376 90 L401 54 L426 90 Z"/><path d="M401 54 V48"/><circle cx="401" cy="47" r="1.5"/>
+          <path d="M395 172 V162 a6 6 0 0 1 12 0 V172"/><path d="M401 116 V124 M401 138 V146"/>
+          <path d="M14 172 H440" stroke="#e8923f" stroke-width="2"/>
+          <path d="M372 178 c 8 -4, 16 4, 29 0 s 21 -4, 29 0" stroke="#9fd4cb" stroke-opacity=".55" stroke-width="1.3"/>
+        </svg>
+      </div>
+
       <div class="foot-bottom">
         <span>© 2026 <span class="wm" style="vertical-align:-2px;"><span class="lech">lech</span><span class="code">code</span></span> · Landsberg am Lech</span>
         <span class="hand" style="font-family:var(--hand);font-size:18px;color:var(--gold);">mit Liebe gebaut</span>
